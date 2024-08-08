@@ -1,1 +1,8 @@
-hello
+# Ignore everything
+*
+
+# Except...
+!*.cpp
+!README.md
+!.gitignore
+!*/
