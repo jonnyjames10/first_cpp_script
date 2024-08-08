@@ -1,18 +1,15 @@
 #include <iostream>
 
 int main() {
-    int n1;
-    int n2;
-    int ans;
+    int n;
 
-    std::cout << "Enter a number: ";
-    std::cin >> n1;
+    std::cout << "Enter an integer to find if it's odd or even: ";
+    std::cin >> n;
 
-    std::cout << "Enter a second number: ";
-    std::cin >> n2;
-
-    ans = n1 + n2;
-
-    std::cout << "Adding " << n1 << " and " << n2 << " = " << ans << "!\n";
+    if (n % 2 == 0) {
+        std::cout << n << " is even!\n";
+    } else {
+        std::cout << n << " is odd!\n";
+    }
     return 0;
 }
