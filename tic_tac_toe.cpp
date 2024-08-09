@@ -49,7 +49,7 @@ int main() {
         cout << "Player " << player << ", enter a column (1-3) and row (1-3) with a space in between: ";
         cin >> col >> row;
 
-        board[row - 1][col - 1] = player;
+        board[4 - row - 1][col - 1] = player;
 
         if (check_win(board, player)) {
             cout << "Player " << player << " wins!\n";
