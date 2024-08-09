@@ -40,12 +40,22 @@ int main() {
     char board[3][3] = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
     char player = 'X';
     int row, col;
+    int n;
 
-    for (int n = 0; n < 9; n++) {
+    for (n = 0; n < 9; n++) {
 
         disp_board(board);
-        cout << "Player " << player << ", enter a column (1-3) and row (1-3) with a space in between: ";
-        cin >> col >> row;
+
+        while (true) {
+            cout << "Player " << player << ", enter a column (1-3) and row (1-3) with a space in between: ";
+            cin >> col >> row;
+
+            if (board[4 - row - 1][col - 1] != ' ' || row < 1 || row > 3 || col < 1 || row > 3) {
+                cout << "Invalid move. Try again.\n";
+            } else {
+                break;
+            }
+        }
 
         board[4 - row - 1][col - 1] = player;
 
@@ -60,6 +70,11 @@ int main() {
         } else {
             player = 'X';
         }
+    }
+
+    if (n == 9 && check_win(board, 'X') == false && check_win(board, 'O') == false) {
+        disp_board(board);
+        cout << "It's a draw!\n";
     }
 
     return 0;
