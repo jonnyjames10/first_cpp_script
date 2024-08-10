@@ -25,14 +25,14 @@ class account {
             return name;
         }
 
-        float get_balance() {
+        double get_balance() {
             return balance;
         }
 };
 
 int main() {
     std::string a_name;
-    float starting_balance;
+    double starting_balance;
 
     cout << "Enter your account name: ";
     cin >> a_name;
@@ -51,6 +51,7 @@ int main() {
         cout << "2. Deposit money\n";
         cout << "3. Withdraw money\n";
         cout << "4. Exit\n";
+        cout << "Option: ";
 
         cin >> option;
 
